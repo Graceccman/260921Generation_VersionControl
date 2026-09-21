@@ -1,1 +1,449 @@
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>葵興美食指南</title>
+
+<style>
+
+/* ===== 基本設定 ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+    "Noto Sans TC",
+    "Microsoft JhengHei",
+    sans-serif;
+
+    background:#f5faff;
+    color:#333;
+}
+
+/* ===== 頂部 ===== */
+
+header{
+    background:#1565C0;
+    color:white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1{
+    font-size:32px;
+}
+
+header p{
+    margin-top:8px;
+}
+
+/* ===== 搜尋區 ===== */
+
+.search-section{
+    background:white;
+    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.search-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border-radius:30px;
+    border:1px solid #ddd;
+    font-size:16px;
+}
+
+/* ===== 餐廳列表 ===== */
+
+.restaurant-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(300px,1fr));
+
+    gap:25px;
+    padding:30px;
+}
+
+/* ===== 餐廳卡片 ===== */
+
+.restaurant-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+
+    box-shadow:
+    0 5px 16px rgba(0,0,0,0.08);
+
+    transition:0.25s;
+}
+
+.restaurant-card:hover{
+    transform:translateY(-5px);
+}
+
+.restaurant-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+/* ===== 資訊 ===== */
+
+.restaurant-info{
+    padding:18px;
+}
+
+.restaurant-name{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.rating{
+    color:#ff9800;
+    margin-bottom:8px;
+}
+
+.category{
+    color:#666;
+    margin-bottom:6px;
+}
+
+.location{
+    color:#666;
+    margin-bottom:15px;
+}
+
+/* ===== OpenRice按鈕 ===== */
+
+.openrice-btn{
+
+    display:inline-block;
+
+    background:#1565C0;
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:0.2s;
+}
+
+.openrice-btn:hover{
+    background:#0D47A1;
+}
+
+/* ===== Footer ===== */
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#666;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ======================================
+標題
+====================================== -->
+
+<header>
+    <h1>🍜 葵興美食指南</h1>
+    <p>精選葵興區人氣餐廳</p>
+</header>
+
+
+<!-- ======================================
+搜尋
+====================================== -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="搜尋餐廳名稱..."
+            onkeyup="searchRestaurant()">
+
+    </div>
+
+</section>
+
+
+<!-- ======================================
+餐廳列表
+====================================== -->
+
+<section class="restaurant-grid" id="restaurantGrid">
+
+
+    <!-- 元氣壽司 -->
+
+    <div class="restaurant-card"
+         onclick="window.open('https://www.openrice.com/')">
+
+        https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200
+
+        <div class="restaurant-info">
+
+            <div class="restaurant-name">
+                元氣壽司
+            </div>
+
+            <div class="rating">
+                ⭐ Google 評分：4.4
+            </div>
+
+            <div class="category">
+                🍣 日本菜
+            </div>
+
+            <div class="location">
+                📍 Life@KCC
+            </div>
+
+            https://www.openrice.com/
+               查看 OpenRice
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- 譚仔三哥 -->
+
+    <div class="restaurant-card"
+         onclick="window.open('https://www.openrice.com/')">
+
+        https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200
+
+        <div class="restaurant-info">
+
+            <div class="restaurant-name">
+                譚仔三哥米線
+            </div>
+
+            <div class="rating">
+                ⭐ Google 評分：4.3
+            </div>
+
+            <div class="category">
+                🍜 米線
+            </div>
+
+            <div class="location">
+                📍 葵興廣場
+            </div>
+
+            https://www.openrice.com/
+               查看 OpenRice
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 壽司郎 -->
+
+    <div class="restaurant-card"
+         onclick="window.open('https://www.openrice.com/')">
+
+        https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200
+
+        <div class="restaurant-info">
+
+            <div class="restaurant-name">
+                壽司郎
+            </div>
+
+            <div class="rating">
+                ⭐ Google 評分：4.6
+            </div>
+
+            <div class="category">
+                🍣 日本菜
+            </div>
+
+            <div class="location">
+                📍 KCC
+            </div>
+
+            https://www.openrice.com/
+               查看 OpenRice
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 吉野家 -->
+
+    <div class="restaurant-card"
+         onclick="window.open('https://www.openrice.com/')">
+
+        https://images.unsplash.com/photo-1516684732162-798a0062be99?w=1200
+
+        <div class="restaurant-info">
+
+            <div class="restaurant-name">
+                吉野家
+            </div>
+
+            <div class="rating">
+                ⭐ Google 評分：4.1
+            </div>
+
+            <div class="category">
+                🍱 日式快餐
+            </div>
+
+            <div class="location">
+                📍 新都會廣場
+            </div>
+
+            https://www.openrice.com/
+               查看 OpenRice
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- 大家樂 -->
+
+    <div class="restaurant-card"
+         onclick="window.open('https://www.openrice.com/')">
+
+        https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200
+
+        <div class="restaurant-info">
+
+            <div class="restaurant-name">
+                大家樂
+            </div>
+
+            <div class="rating">
+                ⭐ Google 評分：4.0
+            </div>
+
+            <div class="category">
+                🍛 港式快餐
+            </div>
+
+            <div class="location">
+                📍 葵興商場
+            </div>
+
+            https://www.openrice.com/
+               查看 OpenRice
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- Pizza Hut -->
+
+    <div class="restaurant-card"
+         onclick="window.open('https://www.openrice.com/')">
+
+        https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200
+
+        <div class="restaurant-info">
+
+            <div class="restaurant-name">
+                Pizza Hut
+            </div>
+
+            <div class="rating">
+                ⭐ Google 評分：4.2
+            </div>
+
+            <div class="category">
+                🍕 西餐
+            </div>
+
+            <div class="location">
+                📍 葵興廣場
+            </div>
+
+            https://www.openrice.com/
+               查看 OpenRice
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 葵興美食指南
+</footer>
+
+
+<script>
+
+/* ==========================================
+搜尋功能
+========================================== */
+
+function searchRestaurant(){
+
+    let keyword =
+        document.getElementById("searchInput")
+        .value
+        .toUpperCase();
+
+    let cards =
+        document.getElementsByClassName("restaurant-card");
+
+    for(let i=0;i<cards.length;i++){
+
+        let name =
+            cards[i]
+            .getElementsByClassName("restaurant-name")[0]
+            .innerText
+            .toUpperCase();
+
+        if(name.indexOf(keyword) > -1){
+
+            cards[i].style.display="";
+
+        }else{
+
+            cards[i].style.display="none";
+
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
